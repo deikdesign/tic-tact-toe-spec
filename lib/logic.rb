@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Saving Player information
 class Player
   attr_accessor :name, :team
@@ -19,7 +17,6 @@ class Game
 
   def make_move(team, move)
     return false if !move.is_a?(Integer) || !(1..9).include?(move)
-
     if (team == 'X') && @moves_done.none?(move)
       @board[move - 1] = 'X'
       @moves_done.push(move)

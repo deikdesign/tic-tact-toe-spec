@@ -14,10 +14,12 @@ class Game
   attr_reader :board, :moves_done
   def initialize
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    @moves_done = []
+    @moves_done = [7]
   end
 
   def make_move(team, move)
+    return false if !move.is_a?(Integer) || !(1..9).include?(move)
+
     if (team == 'X') && @moves_done.none?(move)
       @board[move - 1] = 'X'
       @moves_done.push(move)

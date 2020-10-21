@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Saving Player information
 class Player
   attr_accessor :name, :team

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require '../lib/logic.rb'
 
 play_again = 'Y'

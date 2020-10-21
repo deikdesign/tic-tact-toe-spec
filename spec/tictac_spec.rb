@@ -1,4 +1,6 @@
-require './lib/logic'
+# frozen_string_literal: true
+
+require_relative '../lib/logic'
 
 describe Game do
   let(:new_game) { Game.new }
@@ -17,16 +19,16 @@ describe Game do
 
   describe '#check_if_win?' do
     it 'Check if there is no winner' do
-      expec(new_game.check_if_win?).to eql false
+      expect(new_game.check_if_win?).to eql false
     end
   end
 
   describe '#check_if_move_done?' do
-    it 'Check if there is a move'
-    expect(new - game.check_if_win?(7)).to eql false
+    it 'Check if there is a move' do
+    expect(new_game.check_move_done?(7)).to eql false
   end
 
-  it 'verify if move is done' do
+  it 'verify move' do
     expect(new_game.check_if_move_done?(3)).to eql true
+    end
   end
-end

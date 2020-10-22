@@ -12,22 +12,38 @@ class Game
   attr_reader :board, :moves_done
   def initialize
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    @moves_done = [7]
+    @moves_done = [10]
   end
 
   def make_move(team, move)
-    return false if !move.is_a?(Integer) || !(1..9).include?(move)
+    return false unless (1..9).include?(move)
+
     if (team == 'X') && @moves_done.none?(move)
       @board[move - 1] = 'X'
       @moves_done.push(move)
-      true
+      return true
     elsif (team == 'O') && @moves_done.none?(move)
       @board[move - 1] = 'O'
       @moves_done.push(move)
-      true
+      return true
     end
     false
   end
+
+  # def make_move(team, move)
+  # return false if !move.is_a?(Integer)) || (!(1..9).include?(move)
+  #   if (team == 'X') && @moves_done.none?(move)
+  #     @board[move - 1] = 'X'
+  #     @moves_done.push(move)
+  #     return true
+  #   elsif (team == 'O') && @moves_done.none?(move)
+  #     @board[move - 1] = 'O'
+  #     @moves_done.push(move)
+  #     true
+  #   end
+
+  #   false
+  # end
 
   def check_if_win?
     winner = false

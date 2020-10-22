@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Saving Player information
 class Player
   attr_accessor :name, :team
@@ -12,7 +14,7 @@ class Game
   attr_reader :board, :moves_done
   def initialize
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    @moves_done = [10]
+    @moves_done = [7]
   end
 
   def make_move(team, move)

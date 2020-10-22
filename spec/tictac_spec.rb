@@ -24,10 +24,10 @@ describe Game do
   end
   describe '#check_if_move_done?' do
     it 'Check if there is a move' do
-      expect(new_game.check_if_move_done?(7)).to eql true
+      expect(new_game.check_if_move_done?(10)).to eql true
     end
     it 'verify move' do
-      expect(new_game.check_if_move_done?(3)).to eql false
+      expect(new_game.check_if_move_done?(11)).to eql false
     end
   end
 end
